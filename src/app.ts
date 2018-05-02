@@ -12,9 +12,10 @@ dotenv.config({ path: '.env' });
 
 import { ServerLoader, ServerSettings, GlobalAcceptMimesMiddleware } from 'ts-express-decorators';
 import { $log } from 'ts-log-debug';
-import { MongooseService } from './services/shared/mongoose.service';
+import { createConnections } from 'typeorm';
 
 const rootDir = Path.resolve(__dirname);
+
 @ServerSettings({
     rootDir,
     mount: {
@@ -53,7 +54,7 @@ export class Server extends ServerLoader {
     }
 
     async $onInit(): Promise<any> {
-        await MongooseService.connect();
+        await createConnections();
         $log.debug('DB connected');
     }
 
