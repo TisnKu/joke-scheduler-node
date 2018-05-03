@@ -7,12 +7,11 @@ import * as logger from 'morgan';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
+import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from 'ts-express-decorators';
+import { $log } from 'ts-log-debug';
+import { createConnection } from 'typeorm';
 
 dotenv.config({ path: '.env' });
-
-import { ServerLoader, ServerSettings, GlobalAcceptMimesMiddleware } from 'ts-express-decorators';
-import { $log } from 'ts-log-debug';
-import { createConnections } from 'typeorm';
 
 const rootDir = Path.resolve(__dirname);
 
@@ -54,7 +53,8 @@ export class Server extends ServerLoader {
     }
 
     async $onInit(): Promise<any> {
-        await createConnections();
+        const connection = await createConnection();
+        await connection.runMigrations();
         $log.debug('DB connected');
     }
 

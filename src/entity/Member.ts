@@ -1,8 +1,8 @@
 import { Team } from './Team';
-import { Column, Entity, JoinColumn, JoinTable, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Member {
+export class Member extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
