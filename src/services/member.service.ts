@@ -3,11 +3,7 @@ import { Member } from '../entity/Member';
 
 @Service()
 export class MemberService {
-    constructor() {
-    }
-
-
-    async getAllMembers() {
-        return Member.find();
+    getAllMembersByTeamId(teamId: string) {
+        return Member.find({ where: { team: { id: teamId } } });
     }
 }

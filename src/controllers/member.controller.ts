@@ -1,4 +1,4 @@
-import { Controller, Get } from 'ts-express-decorators';
+import { Controller, Get, QueryParams, Required } from 'ts-express-decorators';
 import { MemberService } from '../services/member.service';
 import { Member } from '../entity/Member';
 
@@ -9,7 +9,7 @@ export class MemberController {
     }
 
     @Get('')
-    async getUser(): Promise<Member[]> {
-        return await this.memberService.getAllMembers();
+    async getUser(@Required() @QueryParams('team_id') teamId: string): Promise<Member[]> {
+        return await this.memberService.getAllMembersByTeamId(teamId);
     }
 }
