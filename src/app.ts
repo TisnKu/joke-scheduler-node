@@ -40,7 +40,6 @@ export class Server extends ServerLoader {
     public async $onMountingMiddlewares(): Promise<any> {
         this
             .use(GlobalAcceptMimesMiddleware)
-            .use(bodyParser())
             .use(compression())
             .use(express())
             .use(logger('dev'))
