@@ -34,3 +34,6 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
+
+# Ignore web source dir
+src/web

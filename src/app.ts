@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import 'ts-express-decorators/swagger';
+import 'ts-express-decorators/servestatic';
 
 import * as Path from 'path';
 import * as dotenv from 'dotenv';
@@ -25,6 +26,9 @@ const rootDir = Path.resolve(__dirname);
         `${rootDir}/middlewares/**/**.{ts,js}`,
         `${rootDir}/dal/**/**.{ts,js}`
     ],
+    serveStatic: {
+        '/': `${rootDir}/web/dist`
+    },
     httpPort: process.env.PORT || 3000,
     httpsPort: false,
     acceptMimes: ['application/json'],
