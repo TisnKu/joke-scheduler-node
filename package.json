@@ -3,9 +3,8 @@
   "version": "0.1.2",
   "scripts": {
     "start": "NODE_ENV=dev && nodemon",
-    "prestart": "./web-build.sh",
     "start:prod": "NODE_ENV=production node dist/server.js",
-    "build": "./web-build.sh && tsc && npm run tslint",
+    "build": "npm run tslint && tsc && ./web-build.sh",
     "test": "jest --forceExit",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "path": "tspath",
