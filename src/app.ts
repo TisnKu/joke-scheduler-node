@@ -12,7 +12,9 @@ import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from 'ts-ex
 import { $log } from 'ts-log-debug';
 import { createConnection } from 'typeorm';
 
-dotenv.config({ path: '.env' });
+const getEnvPath = () => process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env';
+
+dotenv.config({ path: getEnvPath() });
 
 const rootDir = Path.resolve(__dirname);
 

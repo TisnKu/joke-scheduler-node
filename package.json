@@ -2,7 +2,7 @@
   "name": "joke-scheduler-node",
   "version": "0.1.2",
   "scripts": {
-    "start": "NODE_ENV=dev && nodemon",
+    "start": "nodemon",
     "start:prod": "NODE_ENV=production node dist/server.js",
     "build": "npm run tslint && tsc && ./web-build.sh",
     "test": "jest --forceExit",

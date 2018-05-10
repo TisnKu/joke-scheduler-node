@@ -6,5 +6,5 @@
   "ignore": [
     "src/**/*.spec.ts"
   ],
-  "exec": "tsc && node ./dist/server.js"
+  "exec": "tsc && NODE_ENV=local node ./dist/server.js"
 }
