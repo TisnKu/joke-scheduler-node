@@ -27,7 +27,7 @@ const rootDir = Path.resolve(__dirname);
         `${rootDir}/dal/**/**.{ts,js}`
     ],
     serveStatic: {
-        '/': `${rootDir}/web/dist`
+        '/': `${rootDir}/web`
     },
     httpPort: process.env.PORT || 3000,
     httpsPort: false,

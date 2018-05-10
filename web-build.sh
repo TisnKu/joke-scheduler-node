@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [ -d src/web ]
+if [ -d web ]
 then
-    cd src/web && git checkout . && git pull --rebase
+    cd web && git checkout . && git pull --rebase
 else
-	cd src && git clone https://github.com/TisnKu/joke-scheduler-web.git web && cd web
+	git clone https://github.com/TisnKu/joke-scheduler-web.git web && cd web
 fi
 
-npm install && ([ ! -d ../../dist/web ] || rm -rf ../../dist/web) && mkdir ../../dist/web && cp -r ./dist ../../dist/web/dist
+npm install && cd .. && ([ ! -d dist/web ] || rm -rf dist/web) && mv web/dist dist/web

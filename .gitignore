@@ -36,4 +36,4 @@ Thumbs.db
 dist/**/*
 
 # Ignore web source dir
-src/web
+web
