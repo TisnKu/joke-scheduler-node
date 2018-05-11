@@ -7,4 +7,9 @@ export class Team extends BaseEntity {
 
     @Column()
     name: string;
+
+    constructor(name: string) {
+        super();
+        this.name = name;
+    }
 }

@@ -1,4 +1,13 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+    BaseEntity, BeforeUpdate,
+    Column,
+    CreateDateColumn,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
+} from 'typeorm';
 import { Member } from './Member';
 import { Team } from './Team';
 
@@ -10,7 +19,7 @@ export class Schedule extends BaseEntity {
     @Column()
     date: string;
 
-    @ManyToOne(() => Member)
+    @ManyToOne(() => Member, { eager: true })
     @JoinColumn({ name: 'member_id' })
     member: Member;
 
@@ -23,4 +32,17 @@ export class Schedule extends BaseEntity {
 
     @Column()
     created_at: number;
+
+    static of(date: string, member: Member): Schedule {
+        const schedule = new Schedule();
+        schedule.date = date;
+        schedule.member = member;
+        schedule.team = member.team;
+        return schedule;
+    }
+
+    @BeforeUpdate()
+    updateDates() {
+        this.updated_at = new Date().getTime();
+    }
 }

@@ -12,6 +12,8 @@ import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from 'ts-ex
 import { $log } from 'ts-log-debug';
 import { createConnection } from 'typeorm';
 
+process.env.TZ = 'Asia/Shanghai';
+
 const getEnvPath = () => process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env';
 
 dotenv.config({ path: getEnvPath() });
@@ -21,7 +23,7 @@ const rootDir = Path.resolve(__dirname);
 @ServerSettings({
     rootDir,
     mount: {
-        '/v1': `${rootDir}/controllers/**/**.controller.{ts,js}`
+        '/api': `${rootDir}/controllers/**/**.controller.{ts,js}`
     },
     componentsScan: [
         `${rootDir}/services/**/**.service.{ts,js}`,
