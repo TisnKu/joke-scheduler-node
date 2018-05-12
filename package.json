@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "scripts": {
     "start": "nodemon",
+    "start:local": "NODE_ENV=local node dist/server.js",
     "start:prod": "NODE_ENV=production node dist/server.js",
     "build": "npm run tslint && tsc",
     "build:web": "./web-build.sh",
