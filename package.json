@@ -4,7 +4,8 @@
   "scripts": {
     "start": "nodemon",
     "start:prod": "NODE_ENV=production node dist/server.js",
-    "build": "npm run tslint && tsc && ./web-build.sh",
+    "build": "npm run tslint && tsc",
+    "build:web": "./web-build.sh",
     "test": "jest --forceExit",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "path": "tspath",
