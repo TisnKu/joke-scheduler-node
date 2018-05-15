@@ -8,7 +8,7 @@ import {
     QueryParams,
     Required,
     Status
-} from 'ts-express-decorators';
+} from '@tsed/common';
 import { MemberService } from '../services/member.service';
 import { Member } from '../entity/Member';
 import { DeleteResult } from 'typeorm';

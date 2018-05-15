@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, QueryParams, Required, Status } from 'ts-express-decorators';
+import { Controller, Get, Patch, QueryParams, Required, Status } from '@tsed/common';
 import { ScheduleService } from '../services/schedule.service';
 import { Schedule } from '../entity/Schedule';
 import { TodayScheduleDTO } from '../dto/TodayScheduleDTO';

@@ -1,6 +1,7 @@
 import 'reflect-metadata';
-import 'ts-express-decorators/swagger';
-import 'ts-express-decorators/servestatic';
+import '@tsed/servestatic';
+import '@tsed/swagger';
+import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from '@tsed/common';
 
 import * as Path from 'path';
 import * as dotenv from 'dotenv';
@@ -8,7 +9,6 @@ import * as logger from 'morgan';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
-import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from 'ts-express-decorators';
 import { $log } from 'ts-log-debug';
 import { createConnection } from 'typeorm';
 

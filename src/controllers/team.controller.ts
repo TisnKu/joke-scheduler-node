@@ -1,4 +1,4 @@
-import { BodyParams, Controller, Delete, Get, PathParams, Post, Status } from 'ts-express-decorators';
+import { BodyParams, Controller, Delete, Get, PathParams, Post, Status } from '@tsed/common';
 import { Team } from '../entity/Team';
 import { TeamService } from '../services/team.service';
 import { HTTPStatusCodes } from '../types/http';

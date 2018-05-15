@@ -1,8 +1,13 @@
 import { NextFunction as ExpressNext, Request as ExpressRequest, Response as ExpressResponse } from 'express';
 import {
-    IMiddlewareError, Err, Next, Request, Response,
-    OverrideMiddleware, GlobalErrorHandlerMiddleware
-} from 'ts-express-decorators';
+    Err,
+    GlobalErrorHandlerMiddleware,
+    IMiddlewareError,
+    Next,
+    OverrideMiddleware,
+    Request,
+    Response
+} from '@tsed/common';
 import { ValidatorError } from 'typescript-param-validator';
 import { API_ERRORS } from '../types/app.errors';
 import { ApiError } from '../utils/error';

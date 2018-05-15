@@ -1,4 +1,4 @@
-import { Service } from 'ts-express-decorators';
+import { Service } from '@tsed/common';
 import { Schedule } from '../entity/Schedule';
 import DateUtils from '../utils/dateUtils';
 import * as _ from 'lodash';
