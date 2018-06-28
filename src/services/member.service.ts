@@ -4,7 +4,7 @@ import { Member } from '../entity/Member';
 @Service()
 export class MemberService {
     getAllMembersByTeamId(teamId: number) {
-        return Member.find({ where: { team: { id: teamId } } });
+        return Member.find({ where: { team: { id: teamId } }, order: { id: 'ASC'} });
     }
 
     createMembers(members: Member[]) {
